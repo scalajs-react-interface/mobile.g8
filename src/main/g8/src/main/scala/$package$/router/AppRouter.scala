@@ -1,7 +1,7 @@
-package sri.mobile.template.router
+package $package$.router
 
 import sri.core.ReactElement
-import sri.mobile.template.components.HelloSriMobile
+import $package$.components.HelloSriMobile
 import sri.universal.components.View
 import sri.universal.router._
 import sri.universal.styles.UniversalStyleSheet

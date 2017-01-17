@@ -1,4 +1,4 @@
-package sri.mobile.template
+package $package$
 
 import sri.mobile.ReactNative
 import sri.mobile.all._
@@ -13,6 +13,6 @@ object MobileApp extends JSApp {
     val root = createReactNativeRoot(
       AppRouter.router
     )
-    ReactNative.AppRegistry.registerComponent("SriMobileTemplate", () => root)
+    ReactNative.AppRegistry.registerComponent("$name$", () => root)
   }
 }

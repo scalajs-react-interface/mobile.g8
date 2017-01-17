@@ -1,10 +1,10 @@
-package sri.mobile.template.components
+package $package$.components
 
 import sri.core.ElementFactory._
 import sri.core.ReactComponent
 import sri.mobile.ReactNative
 import sri.universal.components._
-import sri.universal.styles.UniversalStyleSheet
+import sri.universal.styles.UniversalStyle
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.ScalaJSDefined
@@ -23,18 +23,18 @@ object HelloSriMobile {
     }
   }
 
-  object styles extends UniversalStyleSheet {
+  object styles {
 
-    val container = style(flexOne,
-      backgroundColor := "rgb(162, 3, 112)",
-      justifyContent.center,
-      alignItems.center)
+    val container = new UniversalStyle{ flex = 1,
+      backgroundColor = "rgb(162, 3, 112)",
+      justifyContent = "center",
+      alignItems = "center")
 
-    val image = style(width := 256, height := 256, margin := 20)
+    val image = new UniversalStyle { width = 256; height = 256; margin = 20}
 
-    val text = style(fontWeight._500,
-      fontSize := 18,
-      color := "white")
+    val text = new UniversalStyle { fontWeight = 500,
+      fontSize = 18,
+      color = "white" }
 
   }
 

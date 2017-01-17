@@ -1,13 +1,14 @@
 
 enablePlugins(ScalaJSPlugin)
 
-name := $name$
+name := "$name$"
 
 scalaVersion := "2.11.8"
 
-val sriVersion = "0.7.1"
+resolvers += Resolver.bintrayRepo("scalajs-react-universe", "maven")
 
-libraryDependencies ++= Seq("com.github.chandu0101" %%% "sri-mobile" % sriVersion)
+
+libraryDependencies ++= Seq("scalajs-react-universe" %%% "mobile" % "2017.1.16-SNAPSHOT")
 
 
 
