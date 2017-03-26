@@ -1,3 +1,1 @@
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.14")
-
-
+addSbtPlugin("scalajs-react-interface" % "sbt-sri-platform" % "2017.3.26.2-beta")

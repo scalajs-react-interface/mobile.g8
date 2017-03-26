@@ -1,67 +1,26 @@
+enablePlugins(SriPlatFormPlugin)
 
-enablePlugins(ScalaJSPlugin)
-
-name := "$name$"
+name := "drawertest"
 
 scalaVersion := "2.11.8"
+//scalaVersion := "2.12.1"
 
-resolvers += Resolver.bintrayRepo("scalajs-react-universe", "maven")
+resolvers += Resolver.bintrayRepo("scalajs-react-interface", "maven")
 
-
-libraryDependencies ++= Seq("scalajs-react-universe" %%% "mobile" % "2017.1.16-SNAPSHOT")
-
-
-
-scalaJSModuleKind := ModuleKind.CommonJSModule
-
-/** ================ React_native task   ================ */
-
-val SJS_OUTPUT_PATH = "assets/scalajs-output.js"
-
-val fastOptMobile = Def.taskKey[File]("Generate mobile output file for fastOptJS")
+libraryDependencies ++= Seq(
+  "scalajs-react-interface" %%% "core" % "2017.3.26-beta",
+  "scalajs-react-interface" %%% "mobile" % "2017.3.26-beta",
+  "scalajs-react-interface" %%% "vector-icons" % "2017.3.25-beta",
+  "scalajs-react-interface" %%% "universal" % "2017.3.26-beta",
+  "scalajs-react-interface" %%% "platform-config-ios" % "2017.3.26-beta" % ios,
+  "scalajs-react-interface" %%% "platform-config-android" % "2017.3.26-beta" % android,
+  "scalajs-react-interface" %%% "navigation" % "2017.3.26-beta"
+)
 
 
-artifactPath in Compile in fastOptJS :=
-  baseDirectory.value / SJS_OUTPUT_PATH
-artifactPath in Compile in fastOptMobile :=
-  baseDirectory.value / "index.ios.js"
-fastOptMobile in Compile := {
-  (artifactPath in Compile in fastOptMobile).value.delete()
-  val outFile = (artifactPath in Compile in fastOptMobile).value
-
-  val fastoptOutputCode = IO.read((fastOptJS in Compile).value.data)
-
-  val outString = fastoptOutputCode.replace("this[\"__ScalaJSExportsNamespace\"] = $e;", "") //TODO we don't need this in scala.js 0.6.15
-
-  IO.write(baseDirectory.value / SJS_OUTPUT_PATH, outString)
-
-  val launcher = (scalaJSLauncher in Compile).value.data.content
-  IO.append(outFile, launcher)
-
-  IO.copyFile(outFile, baseDirectory.value / "index.android.js")
-  outFile
-}
-
-
-val fullOptMobile = Def.taskKey[File]("Generate mobile output file for fullOptJS")
-
-
-artifactPath in Compile in fullOptJS :=
-  baseDirectory.value / SJS_OUTPUT_PATH
-artifactPath in Compile in fullOptMobile :=
-  baseDirectory.value / "index.ios.js"
-fullOptMobile in Compile := {
-  (artifactPath in Compile in fullOptMobile).value.delete()
-
-  val outFile = (artifactPath in Compile in fullOptMobile).value
-
-  val fulloptOutputCode = IO.read((fullOptJS in Compile).value.data)
-
-  IO.write(baseDirectory.value / SJS_OUTPUT_PATH, fulloptOutputCode)
-
-  val launcher = (scalaJSLauncher in Compile).value.data.content
-  IO.append(outFile, launcher)
-
-  IO.copyFile(outFile, baseDirectory.value / "index.android.js")
-  outFile
-}
+scalacOptions ++= Seq(
+  "-feature",
+  "-deprecation",
+  "-unchecked",
+  "-language:implicitConversions"
+)
