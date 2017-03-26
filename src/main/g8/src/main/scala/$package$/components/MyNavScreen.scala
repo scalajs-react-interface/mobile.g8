@@ -2,7 +2,6 @@ package $package$.components
 
 import sri.core.{CreateElement, ReactClass}
 import sri.mobile.components.StatusBarComponent
-import sri.mobile.examples.navigation.playground
 import sri.navigation.{NavigationAwareComponentP, _}
 import sri.platform.SriPlatForm
 import sri.universal.components._
