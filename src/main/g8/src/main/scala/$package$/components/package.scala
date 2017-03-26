@@ -2,17 +2,27 @@ package $package$
 
 import sri.navigation._
 import sri.navigation.navigators._
-import sri.platform.SriPlatForm
+import sri.universal.components._
+
 package object components {
 
-  val root = TabNavigator(
-    TabNavigatorConfig(
-      tabBarOptions = TabBarOptions(
-        activeTintColor = if (SriPlatForm.isIOS) "#e91e63" else "#fff")
+  val root = DrawerNavigator(
+    DrawerNavigatorConfig(
+      contentOptions = DrawerContentOptions(
+        activeTintColor = "#e91e63",
+        style = GlobalStyles.drawerItems
+      ),
+      contentComponent = (
+          (props: Navigation[_]) =>
+            View(style = GlobalStyles.wholeContainer)(
+              View(style = GlobalStyles.drawerHeader)(
+                Text(style = GlobalStyles.drawerHeaderLogo)("Scala.js")
+              ),
+              DrawerViewItems(props)
+            )
+      )
     ),
-    registerScreen[HomeScreen],
-    registerScreen[SettingsScreen],
-    registerScreen[ChatScreen],
-    registerScreen[PeopleScreen]
+    registerScreen[InboxScreen],
+    registerScreen[DraftsScreen]
   )
 }

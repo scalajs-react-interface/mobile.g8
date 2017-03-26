@@ -2,7 +2,7 @@ package $package$
 
 import sri.core
 import sri.universal.apis.AppRegistry
-import scala.scalajs.js
+
 import scala.scalajs.js.JSApp
 
 object MobileApp extends JSApp {
