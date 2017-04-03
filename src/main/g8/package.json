@@ -6,12 +6,12 @@
     "start": "react-native start server --transformer scalajsTransformer"
   },
   "dependencies": {
-    "react": "16.0.0-alpha.4",
-    "react-native": "0.43.0-rc.4",
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.43.0",
     "react-navigation": "github:react-community/react-navigation"
   },
   "devDependencies": {
     "babel-preset-react-native": "1.9.1",
-    "react-test-renderer": "16.0.0-alpha.3"
+    "react-test-renderer": "16.0.0-alpha.6"
   }
 }
