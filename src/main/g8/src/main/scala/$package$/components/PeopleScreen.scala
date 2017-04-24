@@ -12,21 +12,4 @@ class PeopleScreen extends NavigationScreenComponentNoPS {
   def render() = MyNavScreen("People Tab")
 }
 
-object PeopleScreen {
-  @JSExportStatic
-  val navigationOptions = NavigationScreenOptions[PeopleScreen](
-    tabBar = TabBarConfig(
-      icon = (iconOptions: IconOptions) => {
-        Ionicons(
-          name =
-            if (iconOptions.focused) IoniconsList.IOS_PEOPLE
-            else IoniconsList.IOS_PEOPLE_OUTLINE,
-          size = 26,
-          style = UniversalStyleSheet.style(registerStyle = false,
-                                            color = iconOptions.tintColor)
-        )
-      },
-      label = "People"
-    )
-  )
-}
+
