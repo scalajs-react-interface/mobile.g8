@@ -15,9 +15,3 @@ class AboutScreen extends NavigationScreenComponentNoPS {
   }
 }
 
-object AboutScreen {
-  @JSExportStatic
-  val navigationOptions = NavigationScreenOptions[AboutScreen](
-    title = "About"
-  )
-}

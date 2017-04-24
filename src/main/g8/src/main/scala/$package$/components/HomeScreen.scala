@@ -16,7 +16,7 @@ class HomeScreen extends NavigationScreenComponentNoPS {
     View(style = styles.container)(
       getBlock(() =>
                  navigation.navigate[ScreenWithParams](new Params {
-                   override val tile: String = "Second title"
+                   override val title: String = "Second title"
                  }),
                "Screen With Params"),
       getBlock(() => navigation.navigate[ScreenWithCustomRightButton],
@@ -38,10 +38,6 @@ class HomeScreen extends NavigationScreenComponentNoPS {
 }
 
 object HomeScreen {
-  @JSExportStatic
-  val navigationOptions = NavigationScreenOptions[HomeScreen](
-    title = "Scala.js Home"
-  )
 
   object styles extends UniversalStyleSheet {
     val container = style(

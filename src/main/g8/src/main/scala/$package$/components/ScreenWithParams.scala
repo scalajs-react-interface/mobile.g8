@@ -18,7 +18,7 @@ class ScreenWithParams
       Button(title = "Set New Params",
              onPress = () =>
                setParams(new Params {
-                 override val tile: String = "New Title"
+                 override val title: String = "New Title"
                }))
     )
   }
@@ -26,13 +26,8 @@ class ScreenWithParams
 
 object ScreenWithParams {
 
-  @JSExportStatic
-  val navigationOptions = NavigationScreenOptions[ScreenWithParams](
-    title =
-      (nav: Navigation[Params]) => nav.state.params.map(_.tile).getOrElse("")
-  )
   @ScalaJSDefined
   trait Params extends Object {
-    val tile: String
+    val title: String
   }
 }

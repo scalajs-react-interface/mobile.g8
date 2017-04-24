@@ -2,7 +2,7 @@ package $package$.components
 
 import sri.navigation.NavigationScreenOptions
 import sri.navigation._
-import sri.platform.SriPlatForm
+import sri.platform.SriPlatform
 import sri.universal._
 import sri.universal.apis.Alert
 import sri.universal.components._
@@ -19,19 +19,3 @@ class ScreenWithCustomRightButton extends NavigationScreenComponentNoPS {
   }
 }
 
-object ScreenWithCustomRightButton {
-  @JSExportStatic
-  val navigationOptions = NavigationScreenOptions[ScreenWithCustomRightButton](
-    title = "Custom Right",
-    header = HeaderConfig(
-      style = GlobalStyles.defaultHeader, // https://github.com/react-community/react-navigation/issues/170#issuecomment-277286638
-      tintColor = "white",
-      right = Button(title = "Right",
-                     color = if (SriPlatForm.isIOS) "white" else "#546E7A",
-                     onPress = () =>
-                       Alert.alert(title = "Alert",
-                                   message = "You just pressed right button!"))
-    )
-  )
-
-}
