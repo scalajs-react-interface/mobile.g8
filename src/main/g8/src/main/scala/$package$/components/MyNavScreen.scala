@@ -3,7 +3,7 @@ package $package$.components
 import sri.core.{CreateElement, ReactClass}
 import sri.mobile.components.StatusBarComponent
 import sri.navigation.{NavigationAwareComponentP, _}
-import sri.platform.SriPlatForm
+import sri.platform.SriPlatform
 import sri.universal.components._
 import sri.universal.styles.UniversalStyleSheet
 import sri.vector.icons.{MaterialIcons, MaterialIconsList}
@@ -19,7 +19,7 @@ object Header extends ReactClass
 class MyNavScreen extends NavigationAwareComponentP[String] {
   import MyNavScreen._
   def render() = {
-    if (SriPlatForm.isAndroid) StatusBarComponent.setBackgroundColor("#c62828")
+    if (SriPlatform.isAndroid) StatusBarComponent.setBackgroundColor("#c62828")
     ScrollView(style = GlobalStyles.navScreenContainer)(
       View(style = styles.header)(
         TouchableOpacity(onPress = () => navigation.openDrawer(),
@@ -44,8 +44,8 @@ object MyNavScreen {
 
   object styles extends UniversalStyleSheet {
     val header =
-      style(height = if (SriPlatForm.isIOS) 64 else 44,
-            paddingTop = if (SriPlatForm.isIOS) 20 else 0,
+      style(height = if (SriPlatform.isIOS) 64 else 44,
+            paddingTop = if (SriPlatform.isIOS) 20 else 0,
             backgroundColor = Colors.red500)
 
     val menuIcon =

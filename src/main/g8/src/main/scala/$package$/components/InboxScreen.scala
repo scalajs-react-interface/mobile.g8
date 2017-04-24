@@ -11,13 +11,4 @@ class InboxScreen extends NavigationScreenComponentNoPS {
   def render() = MyNavScreen("Inbox Screen")
 }
 
-object InboxScreen {
-  @JSExportStatic
-  val navigationOptions = NavigationScreenOptions[InboxScreen](
-    drawer = DrawerConfig(label = "Inbox", icon = (options: IconOptions) => {
-      MaterialIcons(name = MaterialIconsList.INBOX,
-                    size = 24,
-                    color = options.tintColor)
-    })
-  )
-}
+

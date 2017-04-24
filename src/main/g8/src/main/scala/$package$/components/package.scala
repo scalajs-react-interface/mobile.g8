@@ -3,6 +3,7 @@ package $package$
 import sri.navigation._
 import sri.navigation.navigators._
 import sri.universal.components._
+import sri.vector.icons.{MaterialIcons, MaterialIconsList}
 
 package object components {
 
@@ -13,16 +14,30 @@ package object components {
         style = GlobalStyles.drawerItems
       ),
       contentComponent = (
-          (props: Navigation[_]) =>
-            View(style = GlobalStyles.wholeContainer)(
-              View(style = GlobalStyles.drawerHeader)(
-                Text(style = GlobalStyles.drawerHeaderLogo)("Scala.js")
-              ),
-              DrawerViewItems(props)
-            )
-      )
+        (props: Navigation[_]) =>
+          View(style = GlobalStyles.wholeContainer)(
+            View(style = GlobalStyles.drawerHeader)(
+              Text(style = GlobalStyles.drawerHeaderLogo)("Scala.js")
+            ),
+            DrawerViewItems(props)
+          )
+        )
     ),
-    registerScreen[InboxScreen],
-    registerScreen[DraftsScreen]
+    registerDrawerScreen[InboxScreen](
+      navigationOptions = NavigationDrawerScreenOptions(
+        drawerLabel = "Inbox",
+        drawerIcon = (options: IconOptions) => {
+          MaterialIcons(name = MaterialIconsList.INBOX,
+            size = 24,
+            color = options.tintColor)
+        })),
+    registerDrawerScreen[DraftsScreen](
+      navigationOptions = NavigationDrawerScreenOptions(
+        drawerLabel = "Drafts",
+        drawerIcon = (options: IconOptions) => {
+          MaterialIcons(name = MaterialIconsList.DRAFTS,
+            size = 24,
+            color = options.tintColor)
+        }))
   )
 }
