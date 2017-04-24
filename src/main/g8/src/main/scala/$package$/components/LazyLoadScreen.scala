@@ -29,11 +29,6 @@ class LazyLoadScreen extends NavigationScreenComponentS[LazyLoadScreen.State] {
 
 object LazyLoadScreen {
 
-  @JSExportStatic
-  val navigationOptions = NavigationScreenOptions[LazyLoadScreen](
-    title = "Lazy Load"
-  )
-
   case class State(loading: Boolean)
 
 }

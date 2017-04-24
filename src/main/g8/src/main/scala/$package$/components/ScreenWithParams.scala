@@ -1,7 +1,6 @@
 package $package$.components
 
 import sri.navigation.NavigationScreenOptions
-import sri.navigation.NavigationScreenOptionsImplicits._
 import sri.navigation._
 import sri.universal._
 import sri.universal.components._
