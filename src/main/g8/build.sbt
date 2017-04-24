@@ -2,8 +2,8 @@ enablePlugins(SriPlatFormPlugin)
 
 name := "$name$"
 
-scalaVersion := "2.11.8"
-//scalaVersion := "2.12.1"
+scalaVersion := "2.11.11"
+//scalaVersion := "2.12.2"
 
 resolvers += Resolver.bintrayRepo("scalajs-react-interface", "maven")
 
