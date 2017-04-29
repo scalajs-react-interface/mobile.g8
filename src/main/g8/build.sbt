@@ -1,4 +1,4 @@
-enablePlugins(SriPlatFormPlugin)
+enablePlugins(SriPlatformPlugin)
 
 name := "$name$"
 
