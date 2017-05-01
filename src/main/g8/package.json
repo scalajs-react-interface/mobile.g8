@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "react": "16.0.0-alpha.6",
-    "react-native": "0.43.3",
+    "react-native": "0.44.0",
     "prop-types": "^15.5.8",
     "react-navigation": "github:react-community/react-navigation"
   },
