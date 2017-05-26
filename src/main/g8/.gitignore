@@ -32,8 +32,6 @@ npm-debug.log
 
 
 #project
-index.ios.js
-index.android.js
 android/.gradle
 android/app/build/
 android/build

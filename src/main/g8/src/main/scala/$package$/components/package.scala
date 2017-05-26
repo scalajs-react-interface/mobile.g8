@@ -19,7 +19,7 @@ package object components {
             View(style = GlobalStyles.drawerHeader)(
               Text(style = GlobalStyles.drawerHeaderLogo)("Scala.js")
             ),
-            DrawerViewItems(props)
+            DrawerItems(props)
           )
         )
     ),
