@@ -1,21 +1,21 @@
 package $package$.components
 
-import sri.core.{CreateElement, ReactClass}
+import sri.core.ReactClass
 import sri.mobile.components.StatusBarComponent
 import sri.navigation.{NavigationAwareComponentP, _}
 import sri.platform.SriPlatform
 import sri.universal.components._
-import sri.universal.styles.UniversalStyleSheet
+import sri.universal.styles.InlineStyleSheetUniversal
 import sri.vector.icons.{MaterialIcons, MaterialIconsList}
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSExportStatic, JSImport, ScalaJSDefined}
+import scala.scalajs.js.annotation.JSImport
 
 @js.native
 @JSImport("react-navigation", "CardStack.Header")
 object Header extends ReactClass
 
-@ScalaJSDefined
+
 class MyNavScreen extends NavigationAwareComponentP[String] {
   import MyNavScreen._
   def render() = {
@@ -38,19 +38,19 @@ class MyNavScreen extends NavigationAwareComponentP[String] {
 
 object MyNavScreen {
 
-  @JSExportStatic
-  val contextTypes =
-    navigationContextType
 
-  object styles extends UniversalStyleSheet {
+  object styles extends InlineStyleSheetUniversal {
+
+    import dsl._
+
     val header =
-      style(height = if (SriPlatform.isIOS) 64 else 44,
-            paddingTop = if (SriPlatform.isIOS) 20 else 0,
-            backgroundColor = Colors.red500)
+      style(height := (if (SriPlatform.isIOS) 64 else 44),
+            paddingTop := (if (SriPlatform.isIOS) 20 else 0),
+            backgroundColor := Colors.red500)
 
     val menuIcon =
-      style(marginLeft = 20, marginTop = 5)
+      style(marginLeft := 20, marginTop := 5)
   }
 
-  def apply(banner: String) = CreateElement[MyNavScreen](banner)
+  def apply(banner: String) = WithNavigation[MyNavScreen](banner)
 }
