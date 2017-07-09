@@ -1,13 +1,10 @@
 package $package$
 
-import sri.core
 import sri.universal.apis.AppRegistry
-import scala.scalajs.js
-import scala.scalajs.js.JSApp
 
-object MobileApp extends JSApp {
+object MobileApp {
 
-  def main() = {
+  def main(args: Array[String]) = {
     core.setReactElementType
     AppRegistry.registerComponent("$name$", () => components.root)
   }

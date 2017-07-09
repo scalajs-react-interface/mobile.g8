@@ -1,11 +1,8 @@
 package $package$.components
 
-import sri.core.CreateElement
 import sri.navigation.{NavigationAwareComponentP, _}
 import sri.universal.components._
 
-import scala.scalajs.js.annotation.{JSExportStatic, ScalaJSDefined}
-@ScalaJSDefined
 class MyNavScreen extends NavigationAwareComponentP[String] {
 
   def render() = {
@@ -23,9 +20,5 @@ class MyNavScreen extends NavigationAwareComponentP[String] {
 
 object MyNavScreen {
 
-  @JSExportStatic
-  val contextTypes =
-    navigationContextType
-
-  def apply(banner: String) = CreateElement[MyNavScreen](banner)
+  def apply(banner: String) = WithNavigation[MyNavScreen](banner)
 }
