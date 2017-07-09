@@ -1,6 +1,6 @@
 enablePlugins(SriPlatformPlugin)
 
-name := "stacktest"
+name := "$name$"
 
 scalaVersion := "2.11.11"
 //scalaVersion := "2.12.2"
