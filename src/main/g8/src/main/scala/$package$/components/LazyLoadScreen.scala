@@ -1,12 +1,10 @@
 package $package$.components
 
-import sri.navigation.{NavigationScreenOptions, _}
+import sri.navigation._
 import sri.universal.apis.InteractionManager
 import sri.universal.components._
 
-import scala.scalajs.js.annotation.{JSExportStatic, ScalaJSDefined}
 
-@ScalaJSDefined
 class LazyLoadScreen extends NavigationScreenComponentS[LazyLoadScreen.State] {
   import LazyLoadScreen._
   initialState(State(loading = true))
@@ -15,7 +13,7 @@ class LazyLoadScreen extends NavigationScreenComponentS[LazyLoadScreen.State] {
     View(style = GlobalStyles.wholeContainer)(
       if (state.loading)
         ActivityIndicator(size = ActivityIndicatorSize.LARGE, color = "red")
-      else Text("Secreen loaded")
+      else TextC("Secreen loaded")
     )
   }
 

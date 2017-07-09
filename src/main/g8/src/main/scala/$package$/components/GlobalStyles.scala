@@ -1,13 +1,15 @@
 package $package$.components
 
-import sri.universal.styles.{UniversalStyleConstants, UniversalStyleSheet}
+import sri.universal.styles.InlineStyleSheetUniversal
 
-object GlobalStyles extends UniversalStyleSheet {
+object GlobalStyles extends InlineStyleSheetUniversal {
 
-  val wholeContainer = style(flex = 1, padding = 20)
+  import dsl._
 
-  val defaultHeader = style(backgroundColor = "#E91E63")
+  val wholeContainer = style(flex := 1, padding := 20)
 
-  val defaultCardStyle = style(backgroundColor = "rgb(243, 241, 241)")
+  val defaultHeader = style(backgroundColor := "#E91E63")
+
+  val defaultCardStyle = style(backgroundColor := "rgb(243, 241, 241)")
 
 }

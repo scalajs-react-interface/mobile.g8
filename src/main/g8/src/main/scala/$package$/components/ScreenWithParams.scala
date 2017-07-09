@@ -1,14 +1,11 @@
 package $package$.components
 
-import sri.navigation.NavigationScreenOptions
 import sri.navigation._
-import sri.universal._
 import sri.universal.components._
-import scala.scalajs.js
-import scala.scalajs.js.Object
-import scala.scalajs.js.annotation.{JSExportStatic, ScalaJSDefined}
 
-@ScalaJSDefined
+import scala.scalajs.js.Object
+
+
 class ScreenWithParams
     extends NavigationScreenComponentP[ScreenWithParams.Params] {
   import ScreenWithParams._
@@ -25,7 +22,7 @@ class ScreenWithParams
 
 object ScreenWithParams {
 
-  @ScalaJSDefined
+
   trait Params extends Object {
     val title: String
   }
