@@ -2,9 +2,11 @@ package $package$
 
 import sri.universal.apis.AppRegistry
 
-object MobileApp extends JSApp {
+object MobileApp {
 
-  def main(args:Array[String]) = {
-    AppRegistry.registerComponent("$name$", () => components.root)
+  def main(args: Array[String]) = {
+    // Choose one of: "default.root", "stackNavigation", "tabNavigation", "drawerNavigation", ...
+    val component = default.root
+    AppRegistry.registerComponent("main", () => component)
   }
 }

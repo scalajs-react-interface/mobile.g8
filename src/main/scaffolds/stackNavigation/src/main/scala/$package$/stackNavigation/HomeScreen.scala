@@ -1,10 +1,10 @@
-package $package$.components
+package $package$.stackNavigation
 
 import sri.macros.{OptDefault => NoValue, OptionalParam => U}
 import sri.navigation._
 import sri.universal.components._
 import sri.universal.styles.InlineStyleSheetUniversal
-import $package$.components.ScreenWithParams.Params
+import $package$.stackNavigation.ScreenWithParams.Params
 
 import scala.scalajs.js
 
