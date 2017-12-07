@@ -10,7 +10,7 @@ A [Giter8][g8] template for [Sri][sri] (scalajs-react-interface).
 
 First define some useful variables, just to make life easier:
     
-    $ template=http://github.com/frgomes/mobile.g8
+    $ template=https://github.com/frgomes/mobile.g8
     $ project=myproject
     $ package=com.mycompany
     
@@ -65,9 +65,9 @@ In the example below we show how SBT can help us generate additional code:
 
     $ cd $HOME/workspace/$project
     $ sbt
-    sbt> b8Scaffold stackNavigation com.mycompany
-    sbt> b8Scaffold tabNavigation com.mycompany
-    sbt> b8Scaffold drawerNavigation com.mycompany
+    sbt> g8Scaffold stackNavigation
+    sbt> g8Scaffold tabNavigation
+    sbt> g8Scaffold drawerNavigation
     sbt> ~android:dev
 
 You need to adjust MobileApp.scala in order to call the desired implamentation:
