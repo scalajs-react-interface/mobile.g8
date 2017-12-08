@@ -1,4 +1,4 @@
-package $package$.components
+package $package$.default
 
 import sri.universal.styles.InlineStyleSheetUniversal
 

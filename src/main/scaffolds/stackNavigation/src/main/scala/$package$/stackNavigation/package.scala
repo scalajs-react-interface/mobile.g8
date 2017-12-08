@@ -4,7 +4,8 @@ import sri.navigation.navigators._
 import sri.platform.SriPlatform
 import sri.universal.apis.Alert
 import sri.universal.components.Button
-package object components {
+
+package object stackNavigation {
 
   val root = StackNavigator(
     StackNavigatorConfig(

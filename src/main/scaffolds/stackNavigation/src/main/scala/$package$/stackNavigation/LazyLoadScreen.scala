@@ -1,4 +1,4 @@
-package $package$.components
+package $package$.stackNavigation
 
 import sri.navigation._
 import sri.universal.apis.InteractionManager
