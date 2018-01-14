@@ -2,15 +2,15 @@ enablePlugins(SriPlatformPlugin)
 
 name := "$name$"
 
-scalaVersion := "2.11.11"
-//scalaVersion := "2.12.4"
+scalaVersion := "2.12.4"
 
 lazy val versions = new {
-  val sri = "2017.7.9-RC"
+  val sri = "2017.12.28-RC"
 }
 
 
 resolvers += Resolver.bintrayRepo("scalajs-react-interface", "maven")
+resolvers += Resolver.bintrayRepo("scalajs-plus", "maven")
 
 libraryDependencies ++= Seq(
   "scalajs-react-interface" %%% "core"                    % versions.sri,
